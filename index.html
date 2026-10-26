@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capture® — Md Kawsar Mahmud | Personal Photography Journal</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        dark: '#121316',
+                        cardDark: '#1A1C20',
+                        glass: 'rgba(255, 255, 255, 0.08)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0d0e11;
+            color: #e2e8f0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .backdrop-blur-glass {
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+        .text-glow {
+            text-shadow: 0 0 20px rgba(255,255,255,0.2);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #121316;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 9999px;
+        }
+    </style>
+</head>
+<body class="custom-scrollbar antialiased selection:bg-white selection:text-black min-h-screen flex flex-col justify-between">
+
+    <!-- Floating Navigation Header -->
+    <header class="fixed top-6 inset-x-0 z-50 flex justify-center px-4">
+        <nav class="bg-black/70 border border-white/10 backdrop-blur-xl rounded-full px-6 py-2.5 flex items-center justify-between w-full max-w-4xl shadow-2xl transition-all duration-300">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-2 text-white font-bold tracking-tight text-lg group">
+                <span>capture<span class="text-xs align-super text-gray-400 font-light group-hover:rotate-180 transition-transform">®</span></span>
+                <span class="text-xs text-gray-400 font-normal hidden sm:inline-block border-l border-white/20 pl-2">Md Kawsar Mahmud</span>
+            </a>
+
+            <!-- Nav Links -->
+            <div class="hidden md:flex items-center space-x-6 text-sm font-medium text-gray-300">
+                <a href="#gallery" class="hover:text-white transition">Memories Gallery</a>
+                <a href="#categories" class="hover:text-white transition">Themes</a>
+                <a href="#about" class="hover:text-white transition">About Photographer</a>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex items-center gap-2">
+                <button onclick="toggleAdminModal()" class="bg-white/10 hover:bg-white/20 text-white text-xs px-3 py-1.5 rounded-full border border-white/15 transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-plus text-[10px]"></i>
+                    <span>Add Shot</span>
+                </button>
+                <a href="mailto:kawsarmahmud.cse@gmail.com" class="bg-white text-black hover:bg-gray-200 transition font-semibold text-xs px-4 py-2 rounded-full shadow-lg flex items-center gap-1">
+                    <i class="fa-regular fa-paper-plane text-[10px]"></i>
+                    <span>Contact</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="pt-24 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full flex-grow">
+
+        <!-- Hero Section -->
+        <section class="relative rounded-3xl overflow-hidden border border-white/10 bg-gradient-to-b from-zinc-900 via-zinc-950 to-black p-6 sm:p-12 mb-16 shadow-2xl min-h-[480px] flex flex-col justify-between">
+            <!-- Background Glow & Atmosphere -->
+            <div class="absolute inset-0 bg-gradient-to-tr from-emerald-500/10 via-transparent to-indigo-500/10 pointer-events-none"></div>
+
+            <!-- Top Grid Elements -->
+            <div class="relative z-10 flex flex-wrap justify-between items-center gap-4">
+                <div class="space-y-1">
+                    <span class="text-xs font-mono uppercase tracking-widest text-emerald-400 flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                        Mobile Photography Journal • IQOO Z10 Turbo 5G
+                    </span>
+                </div>
+                <!-- Profile Badge & Socials -->
+                <div class="flex items-center gap-3 bg-black/60 border border-white/10 backdrop-blur-md px-4 py-2 rounded-2xl">
+                    <img class="w-8 h-8 rounded-full border border-emerald-400/50 object-cover" src="photo.jpeg" alt="Md Kawsar Mahmud">
+                    <div class="text-xs">
+                        <span class="text-white font-semibold block">Md Kawsar Mahmud</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Main Typography -->
+            <div class="relative z-10 my-10 max-w-3xl">
+                <div class="flex items-center gap-2 text-white/50 text-xl mb-3 font-light">
+                    <span>+</span>
+                    <h2 class="text-xl sm:text-2xl font-light tracking-tight text-gray-300">Through My IQOO Z10 Turbo Lens</h2>
+                    <span>+</span>
+                </div>
+                <h1 class="text-4xl sm:text-7xl font-bold text-white tracking-tight leading-none mb-6">
+                    capture<span class="text-2xl sm:text-4xl text-gray-400 font-normal">®</span>
+                </h1>
+                <p class="text-base sm:text-lg text-gray-300 max-w-2xl font-light leading-relaxed border-l-2 border-emerald-500/50 pl-4">
+                    — Freeze fleeting moments across Bangladesh. From serene nature trails and kingfishers on Kaptai Lake to midnight lunar eclipses and street shadows — every photograph is captured directly on my <strong class="text-white font-medium">IQOO Z10 Turbo 5G</strong>.
+                </p>
+            </div>
+
+            <!-- Hero Bottom Floating Bar -->
+            <div class="relative z-10 flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4 pt-4 border-t border-white/10">
+                <div class="flex flex-wrap items-center gap-4 text-xs text-gray-400">
+                    <div class="flex items-center gap-1.5 text-gray-300">
+                        <i class="fa-solid fa-mobile-screen-button text-emerald-400"></i>
+                        <span>IQOO Z10 Turbo 5G</span>
+                    </div>
+                    <span>•</span>
+                    <div class="flex items-center gap-1.5 text-gray-300">
+                        <i class="fa-solid fa-location-dot text-rose-400"></i>
+                        <span>Bangladesh Memories</span>
+                    </div>
+                    <span>•</span>
+                    <div class="flex items-center gap-3">
+                        <a href="https://www.linkedin.com/in/md-kawsar-mahmud-sojib/" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-linkedin text-sm"></i></a>
+                        <a href="https://www.instagram.com/_s_o_ji_b_/" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-instagram text-sm"></i></a>
+                        <a href="https://github.com/KMsojib" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-github text-sm"></i></a>
+                    </div>
+                </div>
+
+                <button onclick="toggleAdminModal()" class="bg-white text-black hover:bg-gray-200 transition font-semibold text-xs px-4 py-2 rounded-xl flex items-center gap-1.5 shadow-xl">
+                    <i class="fa-solid fa-plus text-[10px]"></i>
+                    <span>Upload New Shot</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Category Filter Tabs -->
+        <section id="categories" class="mb-10">
+            <div class="flex items-center justify-between mb-6">
+                <div>
+                    <h2 class="text-xs font-mono text-emerald-400 uppercase tracking-widest">Memory Gallery</h2>
+                    <h3 class="text-2xl font-bold text-white mt-1">Explore By Themes</h3>
+                </div>
+                <span class="text-xs text-gray-400 font-mono" id="photoCountDisplay">Showing All Photos</span>
+            </div>
+
+            <!-- Filters horizontal list -->
+            <div class="flex items-center gap-2 overflow-x-auto pb-2 custom-scrollbar">
+                <button onclick="filterPhotos('all')" class="filter-btn active-filter bg-white text-black font-semibold text-xs px-5 py-2.5 rounded-full transition shrink-0 flex items-center gap-2">
+                    <i class="fa-solid fa-border-all text-xs"></i>
+                    <span>All Moments</span>
+                </button>
+                <button onclick="filterPhotos('people')" class="filter-btn bg-white/5 hover:bg-white/10 text-gray-300 font-medium text-xs px-5 py-2.5 rounded-full border border-white/10 transition shrink-0 flex items-center gap-2">
+                    <i class="fa-solid fa-users text-emerald-400 text-xs"></i>
+                    <span>People</span>
+                </button>
+                <button onclick="filterPhotos('nature')" class="filter-btn bg-white/5 hover:bg-white/10 text-gray-300 font-medium text-xs px-5 py-2.5 rounded-full border border-white/10 transition shrink-0 flex items-center gap-2">
+                    <i class="fa-solid fa-leaf text-emerald-400 text-xs"></i>
+                    <span>Nature</span>
+                </button>
+                <button onclick="filterPhotos('birds')" class="filter-btn bg-white/5 hover:bg-white/10 text-gray-300 font-medium text-xs px-5 py-2.5 rounded-full border border-white/10 transition shrink-0 flex items-center gap-2">
+                    <i class="fa-solid fa-crow text-amber-400 text-xs"></i>
+                    <span>Birds & Wildlife</span>
+                </button>
+                <button onclick="filterPhotos('streets')" class="filter-btn bg-white/5 hover:bg-white/10 text-gray-300 font-medium text-xs px-5 py-2.5 rounded-full border border-white/10 transition shrink-0 flex items-center gap-2">
+                    <i class="fa-solid fa-road text-sky-400 text-xs"></i>
+                    <span>Roads & Streets</span>
+                </button>
+                <button onclick="filterPhotos('architecture')" class="filter-btn bg-white/5 hover:bg-white/10 text-gray-300 font-medium text-xs px-5 py-2.5 rounded-full border border-white/10 transition shrink-0 flex items-center gap-2">
+                    <i class="fa-solid fa-building text-purple-400 text-xs"></i>
+                    <span>Architecture</span>
+                </button>
+                <button onclick="filterPhotos('moon')" class="filter-btn bg-white/5 hover:bg-white/10 text-gray-300 font-medium text-xs px-5 py-2.5 rounded-full border border-white/10 transition shrink-0 flex items-center gap-2">
+                    <i class="fa-solid fa-moon text-indigo-300 text-xs"></i>
+                    <span>Moon & Night Sky</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Photo Grid Section -->
+        <section id="gallery" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
+            <!-- Dynamic Content injected via JS -->
+        </section>
+
+        <section id="about" class="border-t border-white/10 pt-16 pb-12 mb-16">
+            <div class="max-w-4xl mx-auto text-center space-y-6">
+                <span class="text-xs font-mono text-gray-400 uppercase tracking-widest flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-camera text-gray-500"></i> About My Journal
+                </span>
+                <blockquote class="text-2xl sm:text-4xl font-serif italic text-gray-100 leading-snug">
+                    “I don’t just take photos, I <span class="not-italic font-sans font-bold text-white underline decoration-white/30">capture</span> raw emotions, subtle moments, and untold stories right through my smartphone.”
+                </blockquote>
+                <p class="text-sm text-gray-400 max-w-xl mx-auto font-light leading-relaxed">
+                    Welcome to my minimal photography space. Every photograph presented here was taken on a mobile device during quiet walks, road trips, late night moon gazing, and spontaneous street strolls.
+                </p>
+
+                <!-- Personal Gear & Info Badges -->
+                <div class="flex flex-wrap items-center justify-center gap-4 pt-4">
+                    <div class="bg-zinc-900 border border-white/10 px-4 py-2 rounded-2xl text-xs text-gray-300 flex items-center gap-2">
+                        <i class="fa-solid fa-mobile text-emerald-400"></i> Primary Device: IQOO Z10 Turbo 5G
+                    </div>
+                    <div class="bg-zinc-900 border border-white/10 px-4 py-2 rounded-2xl text-xs text-gray-300 flex items-center gap-2">
+                        <i class="fa-solid fa-sliders text-sky-400"></i> Editing: Lightroom Mobile / VSCO
+                    </div>
+                    <div class="bg-zinc-900 border border-white/10 px-4 py-2 rounded-2xl text-xs text-gray-300 flex items-center gap-2">
+                        <i class="fa-solid fa-heart text-rose-400"></i> Passion: Everyday Stories
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/10 py-8 px-4 text-center text-xs text-gray-500 bg-black/40">
+        <p>© 2026 Md Kawsar Mahmud. Built with Tailwind CSS & Vanilla JavaScript.</p>
+    </footer>
+
+    <!-- Photo Detail Modal -->
+    <div id="photoModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-cardDark border border-white/10 rounded-3xl max-w-4xl w-full overflow-hidden shadow-2xl relative flex flex-col md:flex-row max-h-[90vh]">
+            <!-- Close Modal Button -->
+            <button onclick="closeModal()" class="absolute top-4 right-4 z-10 bg-black/60 hover:bg-white hover:text-black text-white w-9 h-9 rounded-full flex items-center justify-center transition border border-white/10">
+                <i class="fa-solid fa-xmark text-sm"></i>
+            </button>
+
+            <!-- Left Image Container -->
+            <div class="md:w-3/5 bg-black flex items-center justify-center relative overflow-hidden">
+                <img id="modalImage" src="" alt="Detailed View" class="w-full h-full object-contain max-h-[70vh] md:max-h-[90vh]">
+            </div>
+
+            <!-- Right Details Container -->
+            <div class="md:w-2/5 p-6 flex flex-col justify-between overflow-y-auto custom-scrollbar">
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between">
+                        <span id="modalCategoryBadge" class="bg-white/10 text-gray-200 text-[10px] font-mono px-3 py-1 rounded-full uppercase"></span>
+                        <div class="flex items-center gap-2 text-xs text-gray-400">
+                            <i class="fa-regular fa-calendar"></i>
+                            <span id="modalDate"></span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h2 id="modalTitle" class="text-xl font-bold text-white mb-1"></h2>
+                        <div class="flex items-center gap-1.5 text-xs text-rose-400 mb-3">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span id="modalLocation"></span>
+                        </div>
+                        <p id="modalStory" class="text-xs text-gray-300 font-light leading-relaxed"></p>
+                    </div>
+
+                    <!-- Shot Specs -->
+                    <div class="bg-black/40 border border-white/5 rounded-2xl p-3 grid grid-cols-2 gap-2 text-[11px]">
+                        <div>
+                            <span class="text-gray-500 block">Device</span>
+                            <strong id="modalDevice" class="text-gray-200">IQOO Z10 Turbo 5G</strong>
+                        </div>
+                        <div>
+                            <span class="text-gray-500 block">Lens</span>
+                            <strong id="modalFocal" class="text-gray-200">26mm</strong>
+                        </div>
+                        <div>
+                            <span class="text-gray-500 block">ISO / Exposure</span>
+                            <strong id="modalIso" class="text-gray-200">Auto</strong>
+                        </div>
+                        <div>
+                            <span class="text-gray-500 block">Format</span>
+                            <strong class="text-gray-200">HDR Image</strong>
+                        </div>
+                    </div>
+
+                    <!-- Comments Section -->
+                    <div class="border-t border-white/10 pt-4">
+                        <div class="flex items-center justify-between mb-3">
+                            <h4 class="text-xs font-semibold text-white flex items-center gap-1.5">
+                                <i class="fa-regular fa-comments text-emerald-400"></i> Journal Notes & Comments
+                            </h4>
+                            <span id="commentCountBadge" class="text-[10px] font-mono text-gray-400">0 comments</span>
+                        </div>
+                        <div id="commentsList" class="space-y-2 max-h-36 overflow-y-auto custom-scrollbar pr-1 mb-3"></div>
+
+                        <!-- Add Comment Form -->
+                        <form onsubmit="handleAddComment(event)" class="space-y-2">
+                            <input type="text" id="commentAuthor" placeholder="Your Name" required class="w-full bg-black/50 border border-white/10 rounded-xl px-3 py-1.5 text-xs text-white focus:outline-none focus:border-emerald-400">
+                            <div class="flex gap-2">
+                                <input type="text" id="commentInput" placeholder="Write a note..." required class="flex-grow bg-black/50 border border-white/10 rounded-xl px-3 py-1.5 text-xs text-white focus:outline-none focus:border-emerald-400">
+                                <button type="submit" class="bg-white text-black hover:bg-gray-200 font-semibold px-4 py-1.5 rounded-xl text-xs transition shrink-0">Post</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Modal Footer Actions -->
+                <div class="border-t border-white/10 pt-4 mt-6 flex items-center justify-between">
+                    <button id="likeBtn" onclick="toggleLikeCurrent()" class="bg-black/40 border border-white/10 hover:bg-white/10 text-white px-4 py-2 rounded-xl text-xs font-semibold flex items-center gap-2 transition">
+                        <i id="likeIcon" class="fa-regular fa-heart text-sm"></i>
+                        <span>Love This (<span id="modalLikesCount">0</span>)</span>
+                    </button>
+                    <button onclick="sharePhotograph()" class="bg-white/10 border border-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-xl text-xs font-semibold flex items-center gap-2 transition">
+                        <i class="fa-solid fa-share-nodes text-xs"></i>
+                        <span>Share</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin / Upload Shot Modal -->
+    <div id="adminModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-cardDark border border-white/10 rounded-3xl max-w-lg w-full p-6 shadow-2xl relative">
+            <button onclick="toggleAdminModal()" class="absolute top-4 right-4 bg-black/60 hover:bg-white hover:text-black text-white w-8 h-8 rounded-full flex items-center justify-center transition border border-white/10">
+                <i class="fa-solid fa-xmark text-xs"></i>
+            </button>
+
+            <h3 class="text-lg font-bold text-white mb-1 flex items-center gap-2">
+                <i class="fa-solid fa-camera-retro text-emerald-400"></i> Add New Shot
+            </h3>
+            <p class="text-xs text-gray-400 mb-6">Upload or link a new photo captured with your IQOO Z10 Turbo 5G.</p>
+
+            <form onsubmit="handleNewPhotoSubmit(event)" class="space-y-4">
+                <!-- Image Input Toggle Buttons -->
+                <div class="flex gap-2">
+                    <button type="button" id="btnUploadGallery" onclick="switchImageInput('gallery')" class="flex-1 bg-white/10 border border-white/20 text-white py-2 rounded-xl text-xs font-semibold hover:bg-white/20 transition flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-image"></i> Device Gallery
+                    </button>
+                    <button type="button" id="btnUploadUrl" onclick="switchImageInput('url')" class="flex-1 bg-black/40 border border-white/10 text-gray-400 py-2 rounded-xl text-xs font-semibold hover:text-white transition flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-link"></i> Image URL
+                    </button>
+                </div>
+
+                <!-- Gallery Upload Box -->
+                <div id="galleryInputContainer" class="space-y-2">
+                    <label class="block w-full border-2 border-dashed border-white/20 hover:border-emerald-400/50 rounded-2xl p-4 text-center cursor-pointer transition bg-black/30">
+                        <input type="file" id="newImgFile" accept="image/*" onchange="handleFileSelect(event)" class="hidden">
+                        <i class="fa-solid fa-cloud-arrow-up text-2xl text-emerald-400 mb-2"></i>
+                        <span id="fileNameDisplay" class="text-xs text-gray-300 block font-medium">Tap to select a photo from your phone</span>
+                        <span class="text-[10px] text-gray-500 block mt-1">Supports JPG, PNG, WEBP</span>
+                    </label>
+
+                    <!-- Preview box -->
+                    <div id="imagePreviewBox" class="hidden relative rounded-xl overflow-hidden aspect-video bg-black border border-white/10">
+                        <img id="imagePreview" src="" alt="Preview" class="w-full h-full object-cover">
+                        <button type="button" onclick="clearSelectedImage()" class="absolute top-2 right-2 bg-black/70 hover:bg-rose-600 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- URL Input Box -->
+                <div id="urlInputContainer" class="hidden space-y-1">
+                    <label class="text-xs text-gray-400 block font-medium">Image Direct URL</label>
+                    <input type="url" id="newImgUrl" placeholder="https://..." class="w-full bg-black/50 border border-white/10 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-emerald-400">
+                </div>
+
+                <!-- Photo Details Inputs -->
+                <div class="grid grid-cols-2 gap-3">
+                    <div class="space-y-1">
+                        <label class="text-xs text-gray-400 block font-medium">Title / Caption</label>
+                        <input type="text" id="newTitle" placeholder="e.g. Kaptai Lake Morning" required class="w-full bg-black/50 border border-white/10 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-emerald-400">
+                    </div>
+                    <div class="space-y-1">
+                        <label class="text-xs text-gray-400 block font-medium">Theme Category</label>
+                        <select id="newCategory" class="w-full bg-zinc-900 border border-white/10 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-emerald-400">
+                            <option value="people">People</option>
+                            <option value="nature">Nature</option>
+                            <option value="birds">Birds & Wildlife</option>
+                            <option value="streets">Roads & Streets</option>
+                            <option value="architecture">Architecture</option>
+                            <option value="moon">Moon & Night Sky</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-3">
+                    <div class="space-y-1">
+                        <label class="text-xs text-gray-400 block font-medium">Location</label>
+                        <input type="text" id="newLocation" placeholder="e.g. Chattogram, Bangladesh" class="w-full bg-black/50 border border-white/10 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-emerald-400">
+                    </div>
+                    <div class="space-y-1">
+                        <label class="text-xs text-gray-400 block font-medium">Date</label>
+                        <input type="date" id="newDate" class="w-full bg-black/50 border border-white/10 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-emerald-400">
+                    </div>
+                </div>
+
+                <div class="space-y-1">
+                    <label class="text-xs text-gray-400 block font-medium">Memory Story / Notes</label>
+                    <textarea id="newStory" rows="3" placeholder="Describe the atmosphere, settings, or the story behind this shot..." class="w-full bg-black/50 border border-white/10 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-emerald-400"></textarea>
+                </div>
+
+                <button type="submit" class="w-full bg-white text-black hover:bg-gray-200 transition font-semibold text-xs py-2.5 rounded-xl shadow-lg flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-cloud-arrow-up"></i>
+                    <span>Publish Shot to Journal</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast Notification Element -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 bg-zinc-900 border border-emerald-500/40 text-white px-4 py-3 rounded-2xl shadow-2xl flex items-center gap-3 text-xs">
+        <i class="fa-solid fa-circle-check text-emerald-400 text-sm"></i>
+        <span id="toastMessage">Action successful</span>
+    </div>
+
+    <!-- JavaScript Data & Logic -->
+    <script>
+        // Empty initial gallery — ready for your own photo uploads
+        const defaultPhotos = [];
+
+        // Load existing photos from local storage, or initialize default list
+        let savedPhotos = localStorage.getItem('kawsar_photography_journal');
+        let photosData = savedPhotos ? JSON.parse(savedPhotos) : defaultPhotos;
+
+        let currentModalPhotoId = null;
+        let activeFilter = 'all';
+
+        // Initialize Page
+        window.onload = function() {
+            renderGallery();
+        };
+
+        // Save photos to localStorage
+        function savePhotosToStorage() {
+            try {
+                localStorage.setItem('kawsar_photography_journal', JSON.stringify(photosData));
+            } catch (e) {
+                console.warn('Storage limit reached for local file saving.');
+            }
+        }
+
+        // Render Photo Grid dynamically
+        function renderGallery() {
+            const gallery = document.getElementById('gallery');
+            gallery.innerHTML = '';
+
+            const filtered = activeFilter === 'all' 
+                ? photosData 
+                : photosData.filter(p => p.category === activeFilter);
+
+            document.getElementById('photoCountDisplay').innerText = `Showing ${filtered.length} photo${filtered.length === 1 ? '' : 's'}`;
+
+            if (filtered.length === 0) {
+                gallery.innerHTML = `
+                    <div class="col-span-full text-center py-16 px-4 text-gray-400 bg-zinc-900/50 rounded-3xl border border-white/10 flex flex-col items-center justify-center">
+                        <i class="fa-solid fa-camera-retro text-4xl mb-3 text-emerald-400"></i>
+                        <h3 class="text-lg font-bold text-white mb-1">Your Gallery is Empty</h3>
+                        <p class="text-xs text-gray-400 max-w-md mb-6">
+                            Click <strong>"Add Shot"</strong> to start publishing photos from your IQOO Z10 Turbo 5G!
+                        </p>
+                        <button onclick="toggleAdminModal()" class="bg-white text-black font-semibold text-xs px-5 py-2.5 rounded-full hover:bg-gray-200 transition flex items-center gap-2 shadow-lg">
+                            <i class="fa-solid fa-plus text-xs"></i>
+                            <span>Upload First Memory</span>
+                        </button>
+                    </div>
+                `;
+                return;
+            }
+
+            filtered.forEach(photo => {
+                const card = document.createElement('div');
+                card.className = "group relative bg-cardDark border border-white/10 rounded-3xl overflow-hidden hover:border-white/30 transition-all duration-300 flex flex-col justify-between shadow-lg hover:shadow-2xl";
+                
+                card.innerHTML = `
+                    <!-- Image Container -->
+                    <div class="relative overflow-hidden aspect-[4/3] bg-black cursor-pointer" onclick="openModal(${photo.id})">
+                        <img src="${photo.image}" alt="${photo.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>
+                        
+                        <!-- Top Category Tag & Delete Action -->
+                        <div class="absolute top-3 inset-x-3 flex items-center justify-between">
+                            <div class="bg-black/60 backdrop-blur-md border border-white/10 px-3 py-1 rounded-full text-[10px] font-medium text-gray-200 uppercase tracking-wider">
+                                ${getCategoryLabel(photo.category)}
+                            </div>
+                            <button onclick="deletePhoto(${photo.id}, event)" title="Delete Memory" class="bg-black/60 hover:bg-rose-600/80 text-gray-300 hover:text-white w-7 h-7 rounded-full border border-white/10 flex items-center justify-center transition backdrop-blur-md">
+                                <i class="fa-solid fa-trash-can text-[11px]"></i>
+                            </button>
+                        </div>
+
+                        <!-- Quick Shot Info Badge -->
+                        <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-white text-xs">
+                            <div class="flex items-center gap-1.5 truncate pr-2">
+                                <i class="fa-solid fa-location-dot text-rose-400 text-[10px]"></i>
+                                <span class="truncate text-gray-200 text-[11px]">${photo.location}</span>
+                            </div>
+                            <span class="text-[10px] font-mono text-gray-400 shrink-0">${photo.date}</span>
+                        </div>
+                    </div>
+
+                    <!-- Card Body -->
+                    <div class="p-5 flex flex-col justify-between flex-grow">
+                        <div>
+                            <h3 onclick="openModal(${photo.id})" class="text-lg font-bold text-white hover:text-emerald-400 transition cursor-pointer line-clamp-1 mb-1">
+                                ${photo.title}
+                            </h3>
+                            <p class="text-xs text-gray-400 line-clamp-2 font-light leading-relaxed mb-4">
+                                ${photo.story}
+                            </p>
+                        </div>
+
+                        <!-- Card Footer stats & controls -->
+                        <div class="flex items-center justify-between border-t border-white/5 pt-3 mt-auto text-xs">
+                            <div class="flex items-center gap-1.5 text-gray-400">
+                                <i class="fa-solid fa-mobile-screen text-emerald-400"></i>
+                                <span class="text-[10px] font-mono">${photo.device}</span>
+                            </div>
+
+                            <div class="flex items-center gap-3">
+                                <button onclick="toggleLike(${photo.id}, event)" class="flex items-center gap-1 text-xs ${photo.userLiked ? 'text-rose-400' : 'text-gray-400 hover:text-white'} transition">
+                                    <i class="${photo.userLiked ? 'fa-solid' : 'fa-regular'} fa-heart"></i>
+                                    <span class="text-[11px] font-semibold">${photo.likes}</span>
+                                </button>
+                                <button onclick="openModal(${photo.id})" class="flex items-center gap-1 text-gray-400 hover:text-white transition">
+                                    <i class="fa-regular fa-comment"></i>
+                                    <span class="text-[11px] font-semibold">${photo.comments ? photo.comments.length : 0}</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                gallery.appendChild(card);
+            });
+        }
+
+        // Helper for Category Label
+        function getCategoryLabel(cat) {
+            const map = {
+                people: 'People',
+                nature: 'Nature',
+                birds: 'Birds & Wildlife',
+                streets: 'Roads & Streets',
+                architecture: 'Architecture',
+                moon: 'Moon & Sky'
+            };
+            return map[cat] || cat;
+        }
+
+        // Filter Photos
+        function filterPhotos(category) {
+            activeFilter = category;
+            
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-white', 'text-black', 'font-semibold');
+                btn.classList.add('bg-white/5', 'text-gray-300', 'font-medium');
+            });
+
+            event.currentTarget.classList.remove('bg-white/5', 'text-gray-300', 'font-medium');
+            event.currentTarget.classList.add('bg-white', 'text-black', 'font-semibold');
+
+            renderGallery();
+        }
+
+        // Delete photo
+        function deletePhoto(id, e) {
+            if (e) e.stopPropagation();
+            if (confirm("Are you sure you want to remove this shot from your gallery?")) {
+                photosData = photosData.filter(p => p.id !== id);
+                savePhotosToStorage();
+                renderGallery();
+                showToast("Shot removed from gallery");
+            }
+        }
+
+        // Like Toggle
+        function toggleLike(id, e) {
+            if (e) e.stopPropagation();
+            const photo = photosData.find(p => p.id === id);
+            if (photo) {
+                if (photo.userLiked) {
+                    photo.likes--;
+                    photo.userLiked = false;
+                } else {
+                    photo.likes++;
+                    photo.userLiked = true;
+                    showToast("Loved this memory photograph ❤️");
+                }
+                savePhotosToStorage();
+                renderGallery();
+                if (currentModalPhotoId === id) {
+                    updateModalUI(photo);
+                }
+            }
+        }
+
+        function toggleLikeCurrent() {
+            if (currentModalPhotoId) {
+                toggleLike(currentModalPhotoId);
+            }
+        }
+
+        // Open Detail Modal
+        function openModal(id) {
+            currentModalPhotoId = id;
+            const photo = photosData.find(p => p.id === id);
+            if (!photo) return;
+
+            updateModalUI(photo);
+            document.getElementById('photoModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function updateModalUI(photo) {
+            document.getElementById('modalImage').src = photo.image;
+            document.getElementById('modalTitle').innerText = photo.title;
+            document.getElementById('modalCategoryBadge').innerText = getCategoryLabel(photo.category);
+            document.getElementById('modalDate').innerText = photo.date;
+            document.getElementById('modalLocation').innerText = photo.location;
+            document.getElementById('modalStory').innerText = photo.story || "No memory notes provided.";
+            document.getElementById('modalDevice').innerText = photo.device;
+            document.getElementById('modalFocal').innerText = photo.focal || "26mm Equivalent";
+            document.getElementById('modalIso').innerText = photo.iso || "Auto ISO";
+            
+            document.getElementById('modalLikesCount').innerText = photo.likes;
+            
+            const likeIcon = document.getElementById('likeIcon');
+            const likeBtn = document.getElementById('likeBtn');
+            if (photo.userLiked) {
+                likeIcon.className = "fa-solid fa-heart text-sm text-rose-500";
+                likeBtn.classList.add("bg-rose-500/20", "border-rose-500/40");
+            } else {
+                likeIcon.className = "fa-regular fa-heart text-sm";
+                likeBtn.classList.remove("bg-rose-500/20", "border-rose-500/40");
+            }
+
+            renderModalComments(photo);
+        }
+
+        function renderModalComments(photo) {
+            const commentsList = document.getElementById('commentsList');
+            const commentCountBadge = document.getElementById('commentCountBadge');
+            
+            const comments = photo.comments || [];
+            commentCountBadge.innerText = `${comments.length} comment${comments.length === 1 ? '' : 's'}`;
+            commentsList.innerHTML = '';
+
+            if (comments.length === 0) {
+                commentsList.innerHTML = `<p class="text-[11px] text-gray-500 italic">No comments yet. Be the first to share your thoughts!</p>`;
+                return;
+            }
+
+            comments.forEach(c => {
+                const item = document.createElement('div');
+                item.className = "bg-zinc-900/80 border border-white/5 rounded-xl p-2.5 text-xs";
+                item.innerHTML = `
+                    <div class="flex items-center justify-between font-semibold text-gray-200 mb-0.5">
+                        <span class="text-emerald-400">${escapeHtml(c.author)}</span>
+                    </div>
+                    <p class="text-gray-300 font-light text-[11px]">${escapeHtml(c.text)}</p>
+                `;
+                commentsList.appendChild(item);
+            });
+        }
+
+        function handleAddComment(e) {
+            e.preventDefault();
+            if (!currentModalPhotoId) return;
+
+            const authorInput = document.getElementById('commentAuthor');
+            const textInput = document.getElementById('commentInput');
+
+            const author = authorInput.value.trim();
+            const text = textInput.value.trim();
+
+            if (!author || !text) return;
+
+            const photo = photosData.find(p => p.id === currentModalPhotoId);
+            if (photo) {
+                if (!photo.comments) photo.comments = [];
+                photo.comments.push({ author, text });
+                savePhotosToStorage();
+                renderModalComments(photo);
+                renderGallery();
+                textInput.value = '';
+                showToast("Comment posted!");
+            }
+        }
+
+        function closeModal() {
+            document.getElementById('photoModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+            currentModalPhotoId = null;
+        }
+
+        function toggleAdminModal() {
+            const modal = document.getElementById('adminModal');
+            modal.classList.toggle('hidden');
+        }
+
+        let selectedImageDataUrl = "";
+        let currentInputMode = "gallery";
+
+        function switchImageInput(mode) {
+            currentInputMode = mode;
+            const galleryBox = document.getElementById('galleryInputContainer');
+            const urlBox = document.getElementById('urlInputContainer');
+            const btnGallery = document.getElementById('btnUploadGallery');
+            const btnUrl = document.getElementById('btnUploadUrl');
+
+            if (mode === 'gallery') {
+                galleryBox.classList.remove('hidden');
+                urlBox.classList.add('hidden');
+                btnGallery.className = "flex-1 bg-white/10 border border-white/20 text-white py-2 rounded-xl text-xs font-semibold hover:bg-white/20 transition flex items-center justify-center gap-2";
+                btnUrl.className = "flex-1 bg-black/40 border border-white/10 text-gray-400 py-2 rounded-xl text-xs font-semibold hover:text-white transition flex items-center justify-center gap-2";
+            } else {
+                galleryBox.classList.add('hidden');
+                urlBox.classList.remove('hidden');
+                btnUrl.className = "flex-1 bg-white/10 border border-white/20 text-white py-2 rounded-xl text-xs font-semibold hover:bg-white/20 transition flex items-center justify-center gap-2";
+                btnGallery.className = "flex-1 bg-black/40 border border-white/10 text-gray-400 py-2 rounded-xl text-xs font-semibold hover:text-white transition flex items-center justify-center gap-2";
+            }
+        }
+
+        function handleFileSelect(e) {
+            const file = e.target.files[0];
+            if (!file) return;
+
+            document.getElementById('fileNameDisplay').innerText = file.name;
+
+            const reader = new FileReader();
+            reader.onload = function(evt) {
+                selectedImageDataUrl = evt.target.result;
+                const previewImg = document.getElementById('imagePreview');
+                previewImg.src = selectedImageDataUrl;
+                document.getElementById('imagePreviewBox').classList.remove('hidden');
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function clearSelectedImage() {
+            selectedImageDataUrl = "";
+            document.getElementById('newImgFile').value = "";
+            document.getElementById('fileNameDisplay').innerText = "Tap to select a photo from phone gallery";
+            document.getElementById('imagePreviewBox').classList.add('hidden');
+        }
+
+        function handleNewPhotoSubmit(e) {
+            e.preventDefault();
+            
+            let finalImageUrl = "";
+            if (currentInputMode === 'gallery') {
+                finalImageUrl = selectedImageDataUrl;
+                if (!finalImageUrl) {
+                    showToast("Please choose a photo from your gallery!");
+                    return;
+                }
+            } else {
+                finalImageUrl = document.getElementById('newImgUrl').value;
+                if (!finalImageUrl) {
+                    showToast("Please enter an image URL!");
+                    return;
+                }
+            }
+
+            const newPhoto = {
+                id: Date.now(),
+                title: document.getElementById('newTitle').value,
+                category: document.getElementById('newCategory').value,
+                image: finalImageUrl,
+                location: document.getElementById('newLocation').value || "Bangladesh",
+                date: document.getElementById('newDate').value || "October 2026",
+                device: "IQOO Z10 Turbo 5G",
+                focal: "26mm Lens",
+                iso: "Auto ISO",
+                story: document.getElementById('newStory').value,
+                likes: 1,
+                userLiked: true,
+                comments: []
+            };
+
+            photosData.unshift(newPhoto);
+            savePhotosToStorage();
+            renderGallery();
+            toggleAdminModal();
+            clearSelectedImage();
+            showToast("New IQOO Z10 memory added successfully!");
+            e.target.reset();
+        }
+
+        function sharePhotograph() {
+            if (!currentModalPhotoId) return;
+            const dummy = document.createElement('input');
+            document.body.appendChild(dummy);
+            dummy.value = window.location.href;
+            dummy.select();
+            document.execCommand('copy');
+            document.body.removeChild(dummy);
+            showToast("Photo link copied to clipboard!");
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastMessage').innerText = message;
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3000);
+        }
+
+        function escapeHtml(text) {
+            const map = {
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                '"': '&quot;',
+                "'": '&#039;'
+            };
+            return text.replace(/[&<>"']/g, function(m) { return map[m]; });
+        }
+    </script>
+</body>
+</html>
